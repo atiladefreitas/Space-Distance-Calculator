@@ -1,10 +1,18 @@
 import React from "react";
-import { Container } from "./styles";
+
+import { Container, ImageContainer, Input } from "./styles";
+
+import moon from '../../../../assets/moon.png'
+import { ScrollView } from "./components/ScrollView";
 
 function CardContainer():JSX.Element {
  return (
   <Container>
-    <h1>hello</h1>
+    <ImageContainer>
+      <img src={moon} alt="logo marca"/>
+    </ImageContainer>
+  <Input placeholder="What is the distance you want to travel?"/>
+  <ScrollView />
   </Container>
  )  
 }
