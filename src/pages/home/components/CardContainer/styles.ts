@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.section`
   width: 45rem;
   height: 40rem;
   border-radius: 16px;
-  background-color: #FFF8F0;
+  background-color: #fff8f0;
 
   display: flex;
   flex-direction: column;
@@ -14,7 +14,6 @@ export const Container = styled.section`
     width: 5rem;
     height: 5rem;
   }
-
 `;
 
 export const ImageContainer = styled.div`
