@@ -90,57 +90,29 @@ This application was developed for study and contains some simple features of in
 
 - Fetching data from API
 
-_For this, useEffect Hook was used and an new state was created in `newPosts`, working like an local storage_
-
 ```javascript
-useEffect(() => {
-  const fetchPosts = () => {
-    fetch(`${apiURL}/posts`)
-      .then((response) => response.json())
-      .then((json) => {
-        const newPosts = [
-          ...json.map((post: any) => {
-            return {
-              id: post.id,
-              body: post.body,
-              title: post.title,
-              userId: post.userId,
-              favorite: false
-            };
-          })
-        ];
-        setOriginalData(newPosts);
-        setPosts(newPosts);
+  useEffect(() => {
+    const fetchData = () => {
+      FetchSpaceships().then((res) => {
+        if (res !== null) {
+          setSpaceship(res.results);
+        }
       });
-  };
-  fetchPosts();
-}, []);
+    };
+    fetchData();
+  }, []);
 ```
 
-- Deleting Post
-
-_The API being consumed is an Fake API, so, all `DELETE` requisition will return `error 200`, for handle with this, I created an simple `if else` statement for deleted the specific post localy_
+- Mapping and calculating 
 
 ```javascript
-const handleDeletePost = async (id: any) => {
-  await fetch(`${apiURL}/posts/${id}`, {
-    method: 'DELETE'
-  })
-    .then((response) => {
-      if (response.status !== 200) {
-        return;
-      } else {
-        setPosts(
-          posts.filter((post) => {
-            return post.id !== id;
-          })
-        );
-      }
-    })
-    .catch((error) => {
-      console.log(error.message);
-    });
-};
+      {spaceship.map((s) => (
+        <div key={s.url}>
+          <p>
+            {s.name} {Math.ceil(value / s.MGLT)}
+          </p>
+        </div>
+      ))}
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -155,9 +127,7 @@ const handleDeletePost = async (id: any) => {
 <p align="center">
 <a href="https://www.linkedin.com/in/atilafreitas/"><img src="./src/assets/Linkedin.png"height="45em"/></a>
     &nbsp;
-    <a href="https://instagram.com/atiladefreitas.co/"><img src="./src/assets/isntagram.png"height="45em"/></a>
-    &nbsp;
-    <a href="https://t.me/atilajcfreitas"><img src="./src/assets/Telegram.png"height="45em"/></a>
+    <a href="https://t.me/atiladefreitas"><img src="./src/assets/Telegram.png"height="45em"/></a>
     &nbsp;
     <a href="mailto:contact@atiladefreitas.co"><img src="./src/assets/E-mail.png" height="45em"/></a>
     &nbsp;
