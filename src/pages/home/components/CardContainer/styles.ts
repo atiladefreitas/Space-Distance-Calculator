@@ -26,10 +26,9 @@ export const ImageContainer = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 86%;
+  width: 90%;
   height: 2.5rem;
   border: 2px solid #c4c4c4;
   border-radius: 8px;
   font-size: 16px;
-  padding-left: 1rem;
 `;
