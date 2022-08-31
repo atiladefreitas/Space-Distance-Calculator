@@ -91,28 +91,30 @@ This application was developed for study and contains some simple features of in
 - Fetching data from API
 
 ```javascript
-  useEffect(() => {
-    const fetchData = () => {
-      FetchSpaceships().then((res) => {
-        if (res !== null) {
-          setSpaceship(res.results);
-        }
-      });
-    };
-    fetchData();
-  }, []);
+useEffect(() => {
+  const fetchData = () => {
+    FetchSpaceships().then((res) => {
+      if (res !== null) {
+        setSpaceship(res.results);
+      }
+    });
+  };
+  fetchData();
+}, []);
 ```
 
-- Mapping and calculating 
+- Mapping and calculating
 
 ```javascript
-      {spaceship.map((s) => (
-        <div key={s.url}>
-          <p>
-            {s.name} {Math.ceil(value / s.MGLT)}
-          </p>
-        </div>
-      ))}
+{
+  spaceship.map((s) => (
+    <div key={s.url}>
+      <p>
+        {s.name} {Math.ceil(value / s.MGLT)}
+      </p>
+    </div>
+  ));
+}
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>

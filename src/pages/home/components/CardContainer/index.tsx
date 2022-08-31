@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Container, ImageContainer, Input } from './styles';
+import { Container, ImageContainer, Input, Wrapper } from './styles';
 
 import moon from '../../../../assets/moon.png';
 import { ScrollView } from './components/ScrollView';
@@ -17,6 +17,8 @@ function CardContainer(): JSX.Element {
       <ImageContainer>
         <img src={moon} alt="logo marca" />
       </ImageContainer>
+      <Wrapper>
+
       <Input
         type={'number'}
         placeholder="What is the distance you want to travel?"
@@ -24,6 +26,7 @@ function CardContainer(): JSX.Element {
         onChange={handleChange}
       />
       <ScrollView value={input} />
+      </Wrapper>
     </Container>
   );
 }

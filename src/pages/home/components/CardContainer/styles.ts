@@ -26,8 +26,23 @@ export const ImageContainer = styled.div`
 
 export const Input = styled.input`
   width: 90%;
-  height: 2.5rem;
+  height: 3rem;
   border: 2px solid #c4c4c4;
-  border-radius: 8px;
+  border-radius: 5px;
   font-size: 16px;
+
+
+::placeholder {
+  padding-left: 1.5rem;
+}
 `;
+
+
+export const Wrapper = styled.div`
+width: 100%;
+height: 30rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`

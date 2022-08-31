@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FetchSpaceships } from '../../../../../../api/spaceship';
 
-import { Container } from './styles';
+import { Container, InformationContainer, SpaceshipName, TableTitle, Stops } from './styles';
 
 interface iInput {
   value: number;
@@ -23,13 +23,36 @@ function ScrollView({ value }: iInput): JSX.Element {
 
   return (
     <Container>
-      {spaceship.map((s) => (
-        <div key={s.url}>
-          <p>
-            {s.name} {Math.ceil(value / s.MGLT)}
+      <div
+        style={{
+          width: '100%'
+        }}
+      >
+        <TableTitle>
+          <p
+            style={{
+              marginLeft: '1.5rem'
+            }}
+          >
+            Spaceship
           </p>
-        </div>
-      ))}
+          <p
+            style={{
+              marginRight: '1.5rem'
+            }}
+          >
+            Stops
+          </p>
+        </TableTitle>
+        {spaceship.map((s) => (
+          <div key={s.url}>
+            <InformationContainer>
+              <SpaceshipName>{s.name}</SpaceshipName>
+              <Stops>{Math.ceil(value / s.MGLT)}</Stops>
+            </InformationContainer>
+          </div>
+        ))}
+      </div>
     </Container>
   );
 }
