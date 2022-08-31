@@ -31,18 +31,16 @@ export const Input = styled.input`
   border-radius: 5px;
   font-size: 16px;
 
-
-::placeholder {
-  padding-left: 1.5rem;
-}
+  ::placeholder {
+    padding-left: 1.5rem;
+  }
 `;
 
-
 export const Wrapper = styled.div`
-width: 100%;
-height: 30rem;
+  width: 100%;
+  height: 30rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;

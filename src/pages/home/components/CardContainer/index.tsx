@@ -18,14 +18,13 @@ function CardContainer(): JSX.Element {
         <img src={moon} alt="logo marca" />
       </ImageContainer>
       <Wrapper>
-
-      <Input
-        type={'number'}
-        placeholder="What is the distance you want to travel?"
-        value={input}
-        onChange={handleChange}
-      />
-      <ScrollView value={input} />
+        <Input
+          type={'number'}
+          placeholder="What is the distance you want to travel?"
+          value={input}
+          onChange={handleChange}
+        />
+        <ScrollView value={input} />
       </Wrapper>
     </Container>
   );
