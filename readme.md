@@ -49,7 +49,7 @@ In this application you can:
 
 ### Built With
 
-- [React Native](https://pt-br.reactjs.org/)
+- [React](https://pt-br.reactjs.org/)
 - [Styled Components](https://styled-components.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
